@@ -9,11 +9,11 @@ class daemon:
 
 	def __init__(self, pidfile, debug=False, nofork=False, debuglevel='DEBUG', uid='arago', gid='arago'):
 		self.pidfile = pidfile
-		self.debug=debug
-		self.nofork=nofork
-		self.debuglevel=debuglevel
-		self.uid=uid
-		self.gid=gid
+		self.debug = debug
+		self.nofork = nofork
+		self.debuglevel = debuglevel
+		self.uid = uid
+		self.gid = gid
 
 	def daemonize(self):
 		"""Deamonize class. UNIX double fork mechanism."""
