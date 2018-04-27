@@ -133,8 +133,10 @@ class daemon:
 			sys.exit(1)
 
 		# Start the daemon
+		self.pre_daemonize()
 		if not self.debug and not self.nofork:
 			self.daemonize()
+		self.pre_drop_privileges()
 		self.drop_privileges(uid_name=self.uid, gid_name=self.gid)
 		self.run()
 
@@ -179,3 +181,17 @@ class daemon:
 		It will be called after the process has been daemonized by
 		start() or restart()."""
 		raise NotImplementedError
+
+	def pre_daemonize(self):
+		"""You should override this method when you subclass Daemon.
+
+		It will be called before the process is being daemonized by
+		start() or restart()."""
+		pass
+
+	def pre_drop_privileges(self):
+		"""You should override this method when you subclass Daemon.
+
+		It will be called before the process drops privileges in
+		start() or restart()."""
+		pass
