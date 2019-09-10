@@ -1,6 +1,7 @@
 import logging, sys
 from arago.common.logging.logger import Logger
 
+
 def getCustomLogger(level="INFO", logfile=sys.stderr, formatting=None):
 	logging.setLoggerClass(Logger)
 	logger = logging.getLogger('root')
