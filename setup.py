@@ -23,6 +23,8 @@ distutils.core.setup(
 			  'arago.common.daemon',
 			  'arago.common.helper',
 			  'arago.common.meta',
-			  'arago.common.logging'
+			  'arago.common.logging',
+			  'arago.common.backoff',
+		  	  'arago.common.stopwatch'
 	]
 )
