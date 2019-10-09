@@ -27,5 +27,6 @@ distutils.core.setup(
 	          'arago.common.backoff',
 	          'arago.common.stopwatch',
 	          'arago.common.lists',
+	          'arago.common.gssapi',
 	]
 )
