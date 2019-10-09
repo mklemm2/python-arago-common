@@ -24,6 +24,8 @@ distutils.core.setup(
 	          'arago.common.helper',
 	          'arago.common.meta',
 	          'arago.common.logging',
-	          'arago.common.lists'
+	          'arago.common.backoff',
+	          'arago.common.stopwatch',
+	          'arago.common.lists',
 	]
 )
