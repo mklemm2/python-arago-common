@@ -20,9 +20,10 @@ distutils.core.setup(
 		"License :: OSI Approved :: MIT License",
 	],
 	packages=['arago.common.configparser',
-			  'arago.common.daemon',
-			  'arago.common.helper',
-			  'arago.common.meta',
-			  'arago.common.logging'
+	          'arago.common.daemon',
+	          'arago.common.helper',
+	          'arago.common.meta',
+	          'arago.common.logging',
+	          'arago.common.lists'
 	]
 )
