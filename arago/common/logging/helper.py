@@ -20,7 +20,7 @@ def getCustomLogger(level="INFO", logfile=sys.stderr, formatting=None, rotation=
 	else:
 		formatter = logging.Formatter("%(asctime)s %(levelname)-7s %(message)s", "%Y-%m-%d %H:%M:%S")
 	if logfile != sys.stderr:
-		if rotation:
+		if rotation.value:
 			import logging.handlers
 			handler = logging.handlers.TimedRotatingFileHandler(logfile, when=rotation.value)
 		else:
