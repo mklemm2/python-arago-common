@@ -1,8 +1,16 @@
 import logging, sys
 from arago.common.logging.logger import Logger
+from enum import Enum, auto
 
 
-def getCustomLogger(level="INFO", logfile=sys.stderr, formatting=None):
+class Rotation(Enum):
+	OFF = None
+	HOURLY = 'H'
+	DAILY = 'D'
+	WEEKLY = 'W6'
+
+
+def getCustomLogger(level="INFO", logfile=sys.stderr, formatting=None, rotation=Rotation.OFF):
 	logging.setLoggerClass(Logger)
 	logger = logging.getLogger('root')
 	level = getattr(logger, level)
@@ -12,7 +20,10 @@ def getCustomLogger(level="INFO", logfile=sys.stderr, formatting=None):
 	else:
 		formatter = logging.Formatter("%(asctime)s %(levelname)-7s %(message)s", "%Y-%m-%d %H:%M:%S")
 	if logfile != sys.stderr:
-		handler = logging.FileHandler(logfile)
+		if rotation:
+			handler = logging.TimedRotatingFileHandler(logfile, when=rotation)
+		else:
+			handler = logging.FileHandler(logfile)
 	elif logfile == sys.stderr:
 		handler = logging.StreamHandler()
 	handler.setFormatter(formatter)
