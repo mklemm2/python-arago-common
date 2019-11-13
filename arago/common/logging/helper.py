@@ -11,6 +11,7 @@ class Rotation(Enum):
 
 
 def getCustomLogger(level="INFO", logfile=sys.stderr, formatting=None, rotation=Rotation.OFF):
+	global logging
 	logging.setLoggerClass(Logger)
 	logger = logging.getLogger('root')
 	level = getattr(logger, level)
