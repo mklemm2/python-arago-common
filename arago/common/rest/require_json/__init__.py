@@ -2,7 +2,7 @@ import logging, falcon
 
 class RequireJSON(object):
 	def __init__(self):
-		self.logger = logging.getLogger('root')
+		self.logger = logging.getLogger('top')
 	def process_request(self, req, resp):
 		if not req.client_accepts_json:
 			raise falcon.HTTPNotAcceptable(

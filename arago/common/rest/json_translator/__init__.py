@@ -3,7 +3,7 @@ import ujson as json
 
 class JSONTranslator(object):
 	def __init__(self):
-		self.logger = logging.getLogger('root')
+		self.logger = logging.getLogger('top')
 
 	def process_request(self, req, resp):
 		if req.content_length in (None, 0): return

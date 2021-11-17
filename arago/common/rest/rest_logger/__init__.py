@@ -4,7 +4,7 @@ import json
 
 class RESTLogger(object):
 	def __init__(self):
-		self.logger = logging.getLogger('root')
+		self.logger = logging.getLogger('top')
 	def process_request(self, req, resp):
 		if 'doc' in req.context:
 			self.logger.trace(
